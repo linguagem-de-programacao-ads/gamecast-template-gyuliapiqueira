@@ -14,8 +14,35 @@ async function buscar(){
     // map -> percorre a resposta, nos parenteses vamos criar uma função que vai percorrer os dados da resposta
     // () -> parâmetros, cada item que retornou do vetor
     cards.innerHTML = respostaDadosAgenda.map((itemAgenda) => {
-            return "Teste "
-    });
+            return `   
+            <div class="cardItem">
+                <div class="dataGame"> 
+                    <img src="../imagens/calendar-solid.svg" alt=""> ${itemAgenda.dataJogo} 
+                </div>
+                <img class="img-background" src="${itemAgenda.urlImagem}" alt="">
+                <div class="descricao">
+                    <p> <strong>${itemAgenda.nome}</strong> </p>
+                    <p> ${itemAgenda.descricao}</p>
+                    <p><strong>Gamers: </strong></p>
+
+                    <div class="gamers">
+                    ${
+                        itemAgenda.gamers.map((gamerItem)=>{
+                            return `
+                            <div class="gamerItem">@${gamerItem}</div>
+                            `
+                        }).join('')
+                    }
+                    </div>
+
+                  
+                </div>  
+                <div class="assistir">
+                        <a href="${itemAgenda.urlAssistir}" class="assistirItem"> <img src="../imagens/youtube.svg" alt=""> Assistir </a>
+                </div>
+            </div>
+            `
+    }).join('');
 }
 
 
