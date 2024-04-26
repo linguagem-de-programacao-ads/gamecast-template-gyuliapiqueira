@@ -155,3 +155,18 @@ nav {
         }
     }
 }
+
+.formularioAdd{
+    display: flex;
+    justify-content: center;
+    color:white;
+    font-family: var(--font-defaut);
+
+
+    form{
+        display: flex;
+        /* padding: 5px; */
+        width: 40%;
+        flex-direction: column;
+    }
+}
